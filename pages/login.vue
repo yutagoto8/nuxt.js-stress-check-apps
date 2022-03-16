@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <h1>Login Page</h1>
-    <v-form ref="lohin_form">
+    <v-form ref="login_form">
       <v-text-field
         v-model="email"
         type="emai"
@@ -59,6 +59,7 @@ export default {
       if (this.$refs.login_form.validate()) {
         signInWithEmailAndPassword(auth, this.email, this.password)
           .then((userCredential) => {
+            this.message = 'ログインに成功しました'
             this.$router.push('/')
           })
           .catch((err) => {
