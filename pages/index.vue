@@ -5,15 +5,17 @@
     </v-col>
     <div v-if="user">
       <v-col>
+        <nuxt-link to="/app">
+        ストレスチェックへ
+        </nuxt-link>
+      </v-col>
+      <v-col>
         ログインしてます。
         {{ user.displayName }} {{ user.count }}
       </v-col>
       <v-btn @click="logout">
         ログアウト
       </v-btn>
-    </div>
-    <div v-else>
-      ログインしてません
     </div>
   </v-row>
 </template>
