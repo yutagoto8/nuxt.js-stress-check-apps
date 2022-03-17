@@ -1,8 +1,8 @@
 <template>
   <v-container>
-    <v-card v-for="question in questions" :key="question.id">
+    <v-card>
       <v-text-title>
-        {{ question }}
+        {{ question.content }}
       </v-text-title>
     </v-card>
   </v-container>
@@ -11,8 +11,8 @@
 <script>
 export default {
   props: {
-    qusestions: {
-      type: Array,
+    question: {
+      type: Object,
       default: () => {}
     }
   },
