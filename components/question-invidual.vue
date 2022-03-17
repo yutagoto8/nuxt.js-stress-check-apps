@@ -25,25 +25,96 @@
       </v-card-text>
       <v-card-text v-else>
       </v-card-text>
-      <br>
       <v-card-text>
         {{ question.content }}
       </v-card-text>
+      <br>
+      <v-radio-group v-if="question.cid === 1" v-model="radioGroup">
+        <v-radio
+          v-for="n in 4"
+          :key="n"
+          :label="['そうだ', 'まあそうだ', 'ややちがう', 'ちがう'][n - 1]"
+          :value="5 - n"
+        />
+      </v-radio-group>
+      <v-radio-group v-else-if="question.cid === 2" v-model="radioGroup">
+        <v-radio
+          v-for="n in 4"
+          :key="n"
+          :label="['そうだ', 'まあそうだ', 'ややちがう', 'ちがう'][n - 1]"
+          :value="n"
+        />
+      </v-radio-group>
+      <v-radio-group v-else-if="question.cid === 3" v-model="radioGroup">
+        <v-radio
+          v-for="n in 4"
+          :key="n"
+          :label="['ほとんどなかった', 'ときどきあった', 'しばしばあった', 'ほとんどいつもあった'][n - 1]"
+          :value="5 - n"
+        />
+      </v-radio-group>
+      <v-radio-group v-else-if="question.cid === 4" v-model="radioGroup">
+        <v-radio
+          v-for="n in 4"
+          :key="n"
+          :label="['ほとんどなかった', 'ときどきあった', 'しばしばあった', 'ほとんどいつもあった'][n - 1]"
+          :value="n"
+        />
+      </v-radio-group>
+      <v-radio-group v-else-if="question.cid === 5" v-model="radioGroup">
+        <v-radio
+          v-for="n in 4"
+          :key="n"
+          :label="['非常に', 'かなり', '多少', '全くない'][n - 1]"
+          :value="5 - n"
+        />
+      </v-radio-group>
+      <v-radio-group v-else-if="question.cid === 6" v-model="radioGroup">
+        <v-radio
+          v-for="n in 4"
+          :key="n"
+          :label="['非常に', 'かなり', '多少', '全くない'][n - 1]"
+          :value="n"
+        />
+      </v-radio-group>
+      <v-radio-group v-else-if="question.cid === 7" v-model="radioGroup">
+        <v-radio
+          v-for="n in 4"
+          :key="n"
+          :label="['満足', 'まあ満足', 'やや不満足', '不満足'][n - 1]"
+          :value="5 - n"
+        />
+      </v-radio-group>
+      <v-radio-group v-else-if="question.cid === 8" v-model="radioGroup">
+        <v-radio
+          v-for="n in 4"
+          :key="n"
+          :label="['満足', 'まあ満足', 'やや不満足', '不満足'][n - 1]"
+          :value="n"
+        />
+      </v-radio-group>
+      <v-rdio-group v-else />
     </v-card>
   </v-container>
 </template>
 
 <script>
+// import answerList from './answer-list.vue'
 export default {
+  // components: { answerList },
   props: {
     question: {
+      type: Object,
+      default: () => {}
+    },
+    categories: {
       type: Object,
       default: () => {}
     }
   },
   data () {
     return {
-      class: ''
+      radioGroup: null
     }
   }
 }
