@@ -99,6 +99,7 @@
 </template>
 
 <script>
+let timeoutId
 // import answerList from './answer-list.vue'
 export default {
   // components: { answerList },
@@ -115,6 +116,22 @@ export default {
   data () {
     return {
       radioGroup: null
+    }
+  },
+  watch: {
+    redioGroup(value) {
+      this.$emit('changeValue', {
+        id: this.question.id,
+        point: value
+      })
+    }
+  },
+  methods: {
+    goNext () {
+      clearTimeout(timeoutId)
+      timeoutId = setTimeout(() => {
+        this.$emit('goNext')
+      }, 200)
     }
   }
 }
