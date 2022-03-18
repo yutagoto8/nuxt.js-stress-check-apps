@@ -52,8 +52,7 @@ export default {
                   this.message = user.displayName + 'さんのアカウントが作成されました。'
                   this.$store.dispatch('setUser', {
                     uid: user.uid,
-                    displayName: user.displayName,
-                    count: 0
+                    displayName: user.displayName
                   })
                   this.$router.push('/')
                 })
