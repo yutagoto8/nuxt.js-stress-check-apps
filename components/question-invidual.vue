@@ -118,8 +118,13 @@ export default {
       radioGroup: null
     }
   },
+  computed: {
+    user () {
+      return this.$store.state.user
+    },
+  },
   watch: {
-    redioGroup(value) {
+    radioGroup(value) {
       this.$emit('changeValue', {
         id: this.question.id,
         point: value

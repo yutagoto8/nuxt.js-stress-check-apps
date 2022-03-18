@@ -11,14 +11,28 @@
 </template>
 
 <script>
+import { addDoc, collection, serverTimestamp } from '@firebase/firestore'
+import { db } from '~/plugins/firebase'
+
+const answerCollectionRef = collection(db, 'result')
 export default {
   name: 'SubmitForm',
   props: {
     answers: { type: Object, default: null },
   },
+  computed: {
+    user () {
+      return this.$store.state.user
+    }
+  },
   methods: {
-    submit() {
-      this.$store.dispatch('finishCheck', { answers: this.answers })
+    submit () {
+      addDoc(answerCollectionRef, {
+        answers: this.answers,
+        checked_at: serverTimestamp(),
+        uid: this.user.uid,
+        user: this.user.displayName
+      })
     },
   },
 }

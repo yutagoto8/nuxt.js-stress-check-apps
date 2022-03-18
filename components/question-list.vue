@@ -9,11 +9,11 @@
           <question-invidual
             :question='questions[n - 1]'
             @goNext="next"
-            @chageValue="setAnswer"
+            @changeValue="setAnswer"
           />
         </template>
         <template v-else>
-          <submit-from
+          <submit-form
           :answers="answers"
           />
         </template>
@@ -34,13 +34,13 @@
 <script>
 import { collection, onSnapshot } from '@firebase/firestore'
 import questionInvidual from './question-invidual.vue'
-import SubmitFrom from './submit-from.vue'
+import SubmitForm from './submit-form.vue'
 import { db } from '~/plugins/firebase'
 
 
 const questionCollectionRef = collection(db, 'Questions')
 export default {
-  components: { questionInvidual, SubmitFrom },
+  components: { questionInvidual, SubmitForm },
   data () {
     return {
       onboarding: 0,
@@ -60,6 +60,7 @@ export default {
     onSnapshot(questionCollectionRef, (querySnapshot) => {
       this.questions = querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))
     })
+    this.answers = {}
   },
   methods: {
     prev() {
