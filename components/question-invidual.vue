@@ -29,6 +29,7 @@
         {{ question.content }}
       </v-card-text>
       <br>
+      <v-card-text class="text-center">
       <v-radio-group v-if="question.cid === 1" v-model="radioGroup">
         <v-radio
           v-for="n in 4"
@@ -102,6 +103,7 @@
         />
       </v-radio-group>
       <v-rdio-group v-else />
+      </v-card-text>
     </v-card>
   </v-container>
 </template>

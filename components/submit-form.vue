@@ -2,7 +2,7 @@
   <v-card>
     <v-card-title>
       <p>アンケートは以上です。</p>
-      <p>送信いたします</p>
+      <p>送信ボタンを押して下さい。</p>
     </v-card-title>
     <v-card-actions class="justify-center">
       <v-btn @click="submit">送信</v-btn>

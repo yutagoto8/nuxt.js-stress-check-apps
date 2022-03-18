@@ -28,6 +28,11 @@
         <v-icon>mdi-chevron-right</v-icon>
       </v-btn>
     </v-card-actions>
+    <v-card-text class="text-center">
+      <v-btn color="primary" rounded @click="home">
+        ホームに戻る
+      </v-btn>
+    </v-card-text>
   </v-card>
 </template>
 
@@ -75,6 +80,9 @@ export default {
       } else {
         delete this.answers[answer.id]
       }
+    },
+    home () {
+      this.$router.push('/')
     }
   }
 }

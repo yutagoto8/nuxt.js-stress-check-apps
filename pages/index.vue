@@ -13,26 +13,30 @@
     <v-card-text class="text-h6 text-center">
       過去の結果一覧
     </v-card-text>
-    <v-simple-table>
+    <v-simple-table fixed-header>
       <thead>
-        <th class="text-left">
-          検査日
-        </th>
-        <th class="text-left">
-          結果先リンク
-        </th>
+        <tr>
+          <th class="text-left text-h6">
+            検査日
+          </th>
+          <th class="text-left text-h6">
+            結果先リンク
+          </th>
+        </tr>
       </thead>
       <tbody v-for="result in results" :key="result.id">
-        <td v-if="result.checked_at">
-          {{ $dateFns.format(result.checked_at.toDate(), 'yyyy-MM-dd HH:mm') }}
-        </td>
-        <td>
-          <router-link to="/result">
-            <router-link :to="{name:'result', query:{id: result.id}}">
-              結果
+        <tr>
+          <td v-if="result.checked_at" class="text-h6">
+            {{ $dateFns.format(result.checked_at.toDate(), 'yyyy-MM-dd HH:mm') }}
+          </td>
+          <td>
+            <router-link to="/result">
+              <router-link :to="{name:'result', query:{id: result.id}}" class="text-h6">
+                結果
+              </router-link>
             </router-link>
-          </router-link>
-        </td>
+          </td>
+        </tr>
       </tbody>
       </v-simple-table>
     <br>
