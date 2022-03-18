@@ -33,6 +33,7 @@ export default {
         uid: this.user.uid,
         user: this.user.displayName
       })
+      this.$router.push('/')
     },
   },
 }

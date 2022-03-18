@@ -10,7 +10,15 @@ export const getters = {
 
 export const mutations = {
   setUser (state, user) {
-    state.user = user
+    if (user) {
+      state.user = {
+        uid: user.uid,
+        email: user.email,
+        displayName: user.displayName
+      }
+    } else {
+      state.user = null
+    }
   }
 }
 

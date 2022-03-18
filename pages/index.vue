@@ -3,13 +3,14 @@
     <v-card-title>
       {{ user.displayName }}さんがログインしています。
     </v-card-title>
-    <v-card-text>
+    <br>
+    <v-card-text class="text-h6 text-center">
       <nuxt-link to="/app">
         ストレスチェックへ
       </nuxt-link>
     </v-card-text>
     <br>
-    <v-card-text class="text-h6">
+    <v-card-text class="text-h6 text-center">
       過去の結果一覧
     </v-card-text>
     <v-simple-table>
@@ -23,7 +24,7 @@
       </thead>
       <tbody v-for="result in results" :key="result.id">
         <td v-if="result.checked_at">
-          {{ $dateFns.format(result.checked_at.toDate(), 'yyyy年/MM月dd日/hh時mm分') }}
+          {{ $dateFns.format(result.checked_at.toDate(), 'yyyy-MM-dd HH:mm') }}
         </td>
         <td>
           <router-link to="/result">
@@ -35,9 +36,11 @@
       </tbody>
       </v-simple-table>
     <br>
-    <v-btn @click="logout">
-      ログアウト
-    </v-btn>
+    <v-card-text class="text-center">
+      <v-btn color="primary" rounded @click="logout">
+        ログアウト
+      </v-btn>
+    </v-card-text>
   </v-card>
 </template>
 
