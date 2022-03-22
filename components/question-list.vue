@@ -19,15 +19,15 @@
         </template>
       </v-window-item>
     </v-window>
-    <v-card-actions>
+    <!-- <v-card-actions>
       <v-btn text :disabled="!onboarding" @click="prev">
         <v-icon>mdi-chevron-left</v-icon>
       </v-btn>
       <v-spacer />
-      <v-btn text :disabled="onboarding === length" @click="next">
+      <v-btn text :disabled="onboarding === length || setAnswer !== 0" @click="next">
         <v-icon>mdi-chevron-right</v-icon>
       </v-btn>
-    </v-card-actions>
+    </v-card-actions> -->
     <v-card-text class="text-center">
       <v-btn color="primary" rounded @click="home">
         ホームに戻る
