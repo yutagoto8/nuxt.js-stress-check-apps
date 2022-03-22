@@ -36,7 +36,7 @@
           :key="n"
           :label="['そうだ', 'まあそうだ', 'ややちがう', 'ちがう'][n - 1]"
           :value="5 - n"
-          @change="goNext"
+          @click="goNext"
         />
       </v-radio-group>
       <v-radio-group v-else-if="question.cid === 2" v-model="radioGroup">
@@ -45,7 +45,7 @@
           :key="n"
           :label="['そうだ', 'まあそうだ', 'ややちがう', 'ちがう'][n - 1]"
           :value="n"
-          @change="goNext"
+          @click="goNext"
         />
       </v-radio-group>
       <v-radio-group v-else-if="question.cid === 3" v-model="radioGroup">
@@ -54,7 +54,7 @@
           :key="n"
           :label="['ほとんどなかった', 'ときどきあった', 'しばしばあった', 'ほとんどいつもあった'][n - 1]"
           :value="5 - n"
-          @change="goNext"
+          @click="goNext"
         />
       </v-radio-group>
       <v-radio-group v-else-if="question.cid === 4" v-model="radioGroup">
@@ -63,7 +63,7 @@
           :key="n"
           :label="['ほとんどなかった', 'ときどきあった', 'しばしばあった', 'ほとんどいつもあった'][n - 1]"
           :value="n"
-          @change="goNext"
+          @click="goNext"
         />
       </v-radio-group>
       <v-radio-group v-else-if="question.cid === 5" v-model="radioGroup">
@@ -72,7 +72,7 @@
           :key="n"
           :label="['非常に', 'かなり', '多少', '全くない'][n - 1]"
           :value="5 - n"
-          @change="goNext"
+          @click="goNext"
         />
       </v-radio-group>
       <v-radio-group v-else-if="question.cid === 6" v-model="radioGroup">
@@ -81,7 +81,7 @@
           :key="n"
           :label="['非常に', 'かなり', '多少', '全くない'][n - 1]"
           :value="n"
-          @change="goNext"
+          @click="goNext"
         />
       </v-radio-group>
       <v-radio-group v-else-if="question.cid === 7" v-model="radioGroup">
@@ -90,7 +90,7 @@
           :key="n"
           :label="['満足', 'まあ満足', 'やや不満足', '不満足'][n - 1]"
           :value="5 - n"
-          @change="goNext"
+          @click="goNext"
         />
       </v-radio-group>
       <v-radio-group v-else-if="question.cid === 8" v-model="radioGroup">
@@ -99,7 +99,7 @@
           :key="n"
           :label="['満足', 'まあ満足', 'やや不満足', '不満足'][n - 1]"
           :value="n"
-          @change="goNext"
+          @click="goNext"
         />
       </v-radio-group>
       <v-rdio-group v-else />
