@@ -20,20 +20,20 @@
         </template>
       </v-window-item>
     </v-window>
-    <!-- <v-card-actions>
+    <v-card-actions>
       <v-btn text :disabled="!onboarding" @click="prev">
-        <v-icon>mdi-chevron-left</v-icon>
+        <v-icon>mdi-arrow-u-left-top-bold</v-icon>
+        1つ前の画面へ
       </v-btn>
       <v-spacer />
-      <v-btn text :disabled="onboarding === length || setAnswer !== 0" @click="next">
+      <!-- <v-btn text :disabled="onboarding === length || setAnswer !== 0" @click="next">
         <v-icon>mdi-chevron-right</v-icon>
-      </v-btn>
-    </v-card-actions> -->
-    <v-card-text class="text-center">
-      <v-btn large color="primary" rounded @click="home">
-        ホームに戻る
-      </v-btn>
-    </v-card-text>
+      </v-btn> -->
+      <v-btn text rounded @click="home">
+        <v-icon>mdi-home-import-outline</v-icon>
+          ホーム画面に戻る
+        </v-btn>
+    </v-card-actions>
   </v-card>
 </template>
 

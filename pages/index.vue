@@ -4,9 +4,13 @@
       {{ user.displayName }}さんがログインしています。
     </v-card-title>
     <br>
+    <v-card-text class="text-center">
+      <p>職場におけるストレスレベルを測定します。</p>
+      <p>質問は全部で57問あります。</p>
+    </v-card-text>
     <v-card-text class="text-h6 text-center">
       <nuxt-link to="/app">
-        ストレスチェックへ
+        ストレスチェックを行う
       </nuxt-link>
     </v-card-text>
     <br>

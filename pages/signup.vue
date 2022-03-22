@@ -8,8 +8,8 @@
     <v-btn @click="signup">
       Sign up
     </v-btn>
-    <v-btn @click="home">
-      Home
+    <v-btn @click="login">
+      login
     </v-btn>
     <div>
       {{ message }}
@@ -65,8 +65,8 @@ export default {
         }
       }
     },
-    home () {
-      this.$router.push('/')
+    login () {
+      this.$router.push('/login')
     }
   }
 }
