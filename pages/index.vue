@@ -43,7 +43,7 @@
       </v-simple-table>
     <br>
     <v-card-text class="text-center">
-      <v-btn color="primary" rounded @click="logout">
+      <v-btn large color="primary" rounded @click="logout">
         ログアウト
       </v-btn>
     </v-card-text>

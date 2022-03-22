@@ -15,7 +15,7 @@
       </v-card-text>
       <br>
       <v-card-text class="text-center">
-        <v-btn color="primary" rounded @click="home">
+        <v-btn large color="primary" rounded @click="home">
           ホームに戻る
         </v-btn>
       </v-card-text>

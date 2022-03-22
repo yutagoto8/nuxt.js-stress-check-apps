@@ -25,7 +25,7 @@
       </v-card-text>
       <v-card-text v-else>
       </v-card-text>
-      <v-card-text>
+      <v-card-text class="text-h6">
         {{ question.content }}
       </v-card-text>
       <br>
