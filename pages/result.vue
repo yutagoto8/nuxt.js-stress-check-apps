@@ -6,9 +6,11 @@
         {{ result.user }}さんの結果
       </v-card-text>
       <v-card-text v-if="result.checked_at" class="text-h6">
+        <v-icon>mdi-calendar-text</v-icon>
         検査日：{{ $dateFns.format(result.checked_at.toDate(), 'yyyy-MM-dd HH:mm') }}
       </v-card-text>
       <v-card-text v-if="result.checked_at" class="text-h6">
+        <v-icon>mdi-chart-box</v-icon>
         検査結果：{{ HighStress(result.answers) ? '高ストレス' : '異常なし'}}
       </v-card-text>
       <br>

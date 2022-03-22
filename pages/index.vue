@@ -11,16 +11,18 @@
     </v-card-text>
     <br>
     <v-card-text class="text-h6 text-center">
-      過去の結果一覧
+      過去結果一覧
     </v-card-text>
     <v-simple-table fixed-header>
       <thead>
         <tr>
           <th class="text-left text-h6">
+            <v-icon>mdi-calendar-text</v-icon>
             検査日
           </th>
           <th class="text-left text-h6">
-            結果先リンク
+            <v-icon>mdi-link</v-icon>
+            結果リンク
           </th>
         </tr>
       </thead>
