@@ -1,6 +1,7 @@
 <template>
   <v-card>
     <v-card-title>
+      <p>お疲れ様でした。</p>
       <p>アンケートは以上です。</p>
       <p>送信ボタンを押して下さい。</p>
     </v-card-title>

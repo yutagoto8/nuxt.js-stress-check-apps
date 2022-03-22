@@ -6,6 +6,7 @@
     <v-window v-model="onboarding">
       <v-window-item v-for="n in length + 1" :key="n">
         <template v-if="n <= length">
+          <div class="text-center text-h6">あと{{ length - n + 1}}問です</div>
           <question-invidual
             :question='questions[n - 1]'
             @goNext="next"
