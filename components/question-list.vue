@@ -1,9 +1,6 @@
 <template>
-    <!-- <question-title :question-title='context' /> -->
-    <!-- <question-text :question-text='questionText' /> -->
-    <!-- <question-invidual :question='questions' /> -->
   <v-card>
-    <v-window v-model="onboarding">
+    <v-window v-model="onboarding" touchless>
       <v-window-item v-for="n in length + 1" :key="n">
         <template v-if="n <= length">
           <div class="text-center text-h6">あと{{ length - n + 1}}問です</div>
@@ -26,9 +23,6 @@
         1つ前の画面へ
       </v-btn>
       <v-spacer />
-      <!-- <v-btn text :disabled="onboarding === length || setAnswer !== 0" @click="next">
-        <v-icon>mdi-chevron-right</v-icon>
-      </v-btn> -->
       <v-btn text rounded @click="home">
         <v-icon>mdi-home-import-outline</v-icon>
           ホーム画面に戻る
@@ -84,6 +78,7 @@ export default {
     },
     home () {
       this.$router.push('/')
+      alert("ストレスチェックを中断しました。")
     }
   }
 }

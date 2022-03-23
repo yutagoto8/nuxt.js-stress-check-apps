@@ -110,15 +110,10 @@
 
 <script>
 let timeoutId
-// import answerList from './answer-list.vue'
+
 export default {
-  // components: { answerList },
   props: {
     question: {
-      type: Object,
-      default: () => {}
-    },
-    categories: {
       type: Object,
       default: () => {}
     }
@@ -127,11 +122,6 @@ export default {
     return {
       radioGroup: null
     }
-  },
-  computed: {
-    user () {
-      return this.$store.state.user
-    },
   },
   watch: {
     radioGroup(value) {

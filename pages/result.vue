@@ -47,10 +47,6 @@ export default {
     }
   },
   mounted () {
-    // const q = query(onceResultCollectionRef, where(documentId(), '==', this.$route.query.id))
-    // onSnapshot(q, (querySnapshot) => {
-    //   this.list = querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))
-    // })
     const docRef = doc(db, 'result', this.$route.query.id)
     getDoc(docRef).then((doc) => {
       this.result = doc.data()
